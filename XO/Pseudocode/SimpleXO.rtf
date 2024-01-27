@@ -1,0 +1,41 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs32 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5288\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Initialise the naughts & crosses board\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0     - Create a 3x3 grid to represent the game board\
+    - Each cell on the grid can be empty, X, or O\
+\
+Initialise the current player (starting with X)\
+\
+Repeat until the game is over:\
+    Display the current state of the board\
+\
+    Ask the current player for a move:\
+        - Get input for the row and column where the player wants to place their symbol\
+\
+    Check if the chosen cell is valid:\
+        - The cell should be empty\
+        - The row and column should be within the valid range (0 to 2)\
+\
+    If the move is valid:\
+        Place the current player's symbol in the chosen cell\
+\
+        Check for a winner:\
+            - Check rows, columns, and diagonals for three in a row of the same symbol\
+\
+        If there is a winner:\
+            Display the winner\
+        Else if the board is full:\
+            Display a draw\
+        Else:\
+            Switch to the next player\
+\
+End the game\
+}
