@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Symbol {
-    case empty, X, O
+enum Turn {
+    case cross, nought
 }
 

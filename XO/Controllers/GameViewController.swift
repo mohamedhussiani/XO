@@ -19,7 +19,7 @@ func defaultHStackView() -> UIStackView {
 
 func defaultButton() -> UIButton {
     let button = UIButton(frame: CGRect())
-    button.setTitle("", for: .normal)
+    button.setTitle(nil, for: .normal)
     button.setTitleColor(.black, for: .normal)
     button.titleLabel?.font = .systemFont(ofSize: 50, weight: .heavy)
     button.backgroundColor = .white
@@ -58,6 +58,33 @@ let c3 = defaultButton()
 
 let cells = [a1, a2, a3, b1, b2, b3, c1, c2, c3]
 
+// A simple label with text 'Turn" - No funtionality, purely for design
+let turnLabelTitle: UILabel = {
+    let label = UILabel()
+    label.text = "Turn"
+    label.textColor = .black
+    label.font = .systemFont(ofSize: 25, weight: .heavy)
+    label.textColor = .black
+    return label
+}()
+
+// Label to show which player's turn
+let currentTurnLabel: UILabel = {
+    let label = UILabel()
+    // Cross goes first
+    label.text = K.cross
+    label.textColor = .black
+    label.font = .systemFont(ofSize: 50, weight: .heavy)
+    label.textColor = .black
+    return label
+}()
+
+// Variable to store current player's turn
+var currentTurn = Turn.cross
+
+// Variable to switch the first player when game is reset
+var firstTurn = Turn.cross
+
 class GameViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -66,9 +93,9 @@ class GameViewController: UIViewController {
         
         setupUI()
         
-        
+        // Add plaer's move to board
         for cell in cells {
-            cell.addTarget(self, action: #selector(updateButton), for: .touchUpInside)
+            cell.addTarget(self, action: #selector(updateCell), for: .touchUpInside)
         }
         
         
@@ -76,6 +103,18 @@ class GameViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
+        
+        // Add label & label header + constraints
+        view.addSubview(turnLabelTitle)
+        view.addSubview(currentTurnLabel)
+        
+        turnLabelTitle.translatesAutoresizingMaskIntoConstraints = false
+        turnLabelTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
+        turnLabelTitle.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
+        
+        currentTurnLabel.translatesAutoresizingMaskIntoConstraints = false
+        currentTurnLabel.topAnchor.constraint(equalTo: turnLabelTitle.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
+        currentTurnLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
         
         // Add VStack
         view.addSubview(verticalStackView)
@@ -111,16 +150,110 @@ class GameViewController: UIViewController {
         rowThree.addArrangedSubview(c3)
     }
     
-    @objc func updateButton(for button: UIButton) {
-    
-            if (button.currentTitle == "X") {
-                button.setTitle("O", for: .normal)
-            } else {
-                button.setTitle("X", for: .normal)
+    // The action made by the cell
+    @objc func updateCell(for cell: UIButton) {
+        
+        addMove(to: cell)
+        
+        if checkWinner(for: K.cross) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.resetBoard()
             }
-    
         }
+        
+        if checkWinner(for: K.nought) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.resetBoard()
+            }
+        }
+        
+        if checkBoardIsNotFull() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.resetBoard()
+            }
+        }
+        
+    }
     
+    func verifyCell(for cell: UIButton, with symbol: String) -> Bool {
+        return cell.title(for: .normal) == symbol
+    }
+    
+    func checkWinner(for symbol: String) -> Bool {
+        
+        // Horizontal Victory
+        if verifyCell(for: a1, with: symbol) && verifyCell(for: a2, with: symbol) && verifyCell(for: a3, with: symbol) {
+            return true
+        }
+        if verifyCell(for: b1, with: symbol) && verifyCell(for: b2, with: symbol) && verifyCell(for: b3, with: symbol) {
+            return true
+        }
+        if verifyCell(for: c1, with: symbol) && verifyCell(for: c2, with: symbol) && verifyCell(for: c3, with: symbol) {
+            return true
+        }
+        
+        // Vertical Victory
+        if verifyCell(for: a1, with: symbol) && verifyCell(for: b1, with: symbol) && verifyCell(for: c1, with: symbol) {
+            return true
+        }
+        if verifyCell(for: a2, with: symbol) && verifyCell(for: b2, with: symbol) && verifyCell(for: c2, with: symbol) {
+            return true
+        }
+        if verifyCell(for: a3, with: symbol) && verifyCell(for: b3, with: symbol) && verifyCell(for: c3, with: symbol) {
+            return true
+        }
+        
+        // Diagonal Victory
+        if verifyCell(for: a1, with: symbol) && verifyCell(for: b2, with: symbol) && verifyCell(for: c3, with: symbol) {
+            return true
+        }
+        if verifyCell(for: a3, with: symbol) && verifyCell(for: b2, with: symbol) && verifyCell(for: c1, with: symbol) {
+            return true
+        }
+        
+        return false
+    }
+    
+    
+    func resetBoard() {
+        for cell in cells {
+            cell.setTitle(nil, for: .normal)
+        }
+        
+        if firstTurn == Turn.cross {
+            firstTurn = Turn.nought
+            currentTurnLabel.text = K.nought
+        } else if firstTurn == Turn.nought{
+            firstTurn = Turn.cross
+            currentTurnLabel.text = K.cross
+        }
+        
+        currentTurn = firstTurn
+    }
+    
+    func checkBoardIsNotFull() -> Bool {
+        for cell in cells {
+            if cell.title(for: .normal) == nil {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func addMove(to cell: UIButton) {
+        
+        if cell.currentTitle == nil {
+            if currentTurn == Turn.cross {
+                cell.setTitle(K.cross, for: .normal)
+                currentTurn = Turn.nought
+                currentTurnLabel.text = K.nought
+            } else if currentTurn == Turn.nought {
+                cell.setTitle(K.nought, for: .normal)
+                currentTurn = Turn.cross
+                currentTurnLabel.text = K.cross
+            } 
+        }
+    }
 
     
 }

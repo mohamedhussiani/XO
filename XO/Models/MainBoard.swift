@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import UIKit
+
+struct MainBoard {
+    
+    let grid: UIStackView
+    
+    let rowOneBoards: UIStackView
+    let rowTwoBoards: UIStackView
+    let rowThreeBoards: UIStackView
+    
+    
+    
+    
+}

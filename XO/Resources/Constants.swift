@@ -9,5 +9,7 @@ import Foundation
 
 struct K {
     
-    
+    static let cross = "X"
+    static let nought = "O"
+
 }
