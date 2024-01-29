@@ -18,13 +18,16 @@ func defaultHStackView() -> UIStackView {
 }
 
 func defaultButton() -> UIButton {
-    let button = UIButton(frame: CGRect())
-    button.setTitle(nil, for: .normal)
-    button.setTitleColor(.black, for: .normal)
-    button.titleLabel?.font = .systemFont(ofSize: 50, weight: .heavy)
+    let button = UIButton()
+    button.setImage(nil, for: .normal)
+    button.tintColor = .black
+    button.contentScaleFactor = .greatestFiniteMagnitude
     button.backgroundColor = .white
     return button
 }
+
+// Button Size
+let config = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 50))
 
 let grid = [UIButton]()
 
@@ -132,10 +135,10 @@ class GameViewController: UIViewController {
         verticalStackView.addArrangedSubview(rowThree)
         
         // Constraints
-        for row in verticalStackView.arrangedSubviews {
-            row.translatesAutoresizingMaskIntoConstraints = false
-            row.heightAnchor.constraint(equalTo: row.heightAnchor, multiplier: 1/1).isActive = true
-        }
+//        for row in verticalStackView.arrangedSubviews {
+//            row.translatesAutoresizingMaskIntoConstraints = false
+//            row.heightAnchor.constraint(equalTo: row.heightAnchor, multiplier: 1/1).isActive = true
+//        }
         
         rowOne.addArrangedSubview(a1)
         rowOne.addArrangedSubview(a2)
@@ -155,13 +158,13 @@ class GameViewController: UIViewController {
         
         addMove(to: cell)
         
-        if checkWinner(for: K.cross) {
+        if checkWinner(for: K.crossSymbol) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.resetBoard()
             }
         }
         
-        if checkWinner(for: K.nought) {
+        if checkWinner(for: K.noughtSymbol) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.resetBoard()
             }
@@ -175,11 +178,11 @@ class GameViewController: UIViewController {
         
     }
     
-    func verifyCell(for cell: UIButton, with symbol: String) -> Bool {
-        return cell.title(for: .normal) == symbol
+    func verifyCell(for cell: UIButton, with symbol: UIImage) -> Bool {
+        return (cell.image(for: .normal) == symbol)
     }
     
-    func checkWinner(for symbol: String) -> Bool {
+    func checkWinner(for symbol: UIImage) -> Bool {
         
         // Horizontal Victory
         if verifyCell(for: a1, with: symbol) && verifyCell(for: a2, with: symbol) && verifyCell(for: a3, with: symbol) {
@@ -217,7 +220,7 @@ class GameViewController: UIViewController {
     
     func resetBoard() {
         for cell in cells {
-            cell.setTitle(nil, for: .normal)
+            cell.setImage(nil, for: .normal)
         }
         
         if firstTurn == Turn.cross {
@@ -242,16 +245,18 @@ class GameViewController: UIViewController {
     
     func addMove(to cell: UIButton) {
         
-        if cell.currentTitle == nil {
+        if cell.currentImage == nil {
             if currentTurn == Turn.cross {
-                cell.setTitle(K.cross, for: .normal)
+                cell.setImage(K.crossSymbol, for: .normal)
+                cell.setPreferredSymbolConfiguration(config, forImageIn: .normal)
                 currentTurn = Turn.nought
                 currentTurnLabel.text = K.nought
             } else if currentTurn == Turn.nought {
-                cell.setTitle(K.nought, for: .normal)
+                cell.setImage(K.noughtSymbol, for: .normal)
+                cell.setPreferredSymbolConfiguration(config, forImageIn: .normal)
                 currentTurn = Turn.cross
                 currentTurnLabel.text = K.cross
-            } 
+            }
         }
     }
 

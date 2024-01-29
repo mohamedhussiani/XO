@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-struct DefaultLayout {
+struct DL {
     
-    func VStackView() -> UIStackView {
+    static func VStackView() -> UIStackView {
         let verticalStackView = UIStackView()
         verticalStackView.axis = .vertical
         verticalStackView.distribution = .fillEqually
@@ -20,7 +20,7 @@ struct DefaultLayout {
         return verticalStackView
     }
     
-    func HStackView() -> UIStackView {
+    static func HStackView() -> UIStackView {
         let horizontalStackView = UIStackView()
         horizontalStackView.axis = .horizontal
         horizontalStackView.alignment = .fill
@@ -30,7 +30,7 @@ struct DefaultLayout {
         return horizontalStackView
     }
     
-    func button() -> UIButton {
+    static func button() -> UIButton {
         let button = UIButton()
         button.setTitle("", for: .normal)
         button.setTitleColor(.black, for: .normal)
