@@ -11,3 +11,6 @@ enum Turn {
     case cross, nought
 }
 
+enum TurnError: Error {
+    case invalidTurn
+}

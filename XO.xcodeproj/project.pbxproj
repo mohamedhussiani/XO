@@ -15,15 +15,7 @@
 		E362A6262B593E44001E3719 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362A6252B593E44001E3719 /* Turn.swift */; };
 		E362A6282B59413E001E3719 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362A6272B59413E001E3719 /* Constants.swift */; };
 		E366F5522B664F1B004EBC24 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366F5512B664F1B004EBC24 /* GameManager.swift */; };
-		E38743072B67095E00479116 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38743062B67095E00479116 /* A1ViewController.swift */; };
-		E38743092B6709A600479116 /* A2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38743082B6709A600479116 /* A2ViewController.swift */; };
-		E387430B2B6709C000479116 /* A3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387430A2B6709C000479116 /* A3ViewController.swift */; };
-		E387430D2B6709CF00479116 /* B1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387430C2B6709CF00479116 /* B1ViewController.swift */; };
-		E387430F2B6709DE00479116 /* B2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387430E2B6709DE00479116 /* B2ViewController.swift */; };
-		E38743112B6709F100479116 /* B3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38743102B6709F100479116 /* B3ViewController.swift */; };
-		E38743132B670A0300479116 /* C1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38743122B670A0300479116 /* C1ViewController.swift */; };
-		E38743152B670A0F00479116 /* C2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38743142B670A0F00479116 /* C2ViewController.swift */; };
-		E38743172B670A2500479116 /* C3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38743162B670A2500479116 /* C3ViewController.swift */; };
+		E38743072B67095E00479116 /* MiniBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38743062B67095E00479116 /* MiniBoardViewController.swift */; };
 		E387431B2B670AEA00479116 /* CoreFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387431A2B670AEA00479116 /* CoreFunctions.swift */; };
 		E387DED42B669C99001E3D07 /* MainBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387DED32B669C99001E3D07 /* MainBoardViewController.swift */; };
 		E387DED82B669CD0001E3D07 /* MiniBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387DED72B669CD0001E3D07 /* MiniBoardView.swift */; };
@@ -63,15 +55,7 @@
 		E362A6252B593E44001E3719 /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		E362A6272B59413E001E3719 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E366F5512B664F1B004EBC24 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		E38743062B67095E00479116 /* A1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A1ViewController.swift; sourceTree = "<group>"; };
-		E38743082B6709A600479116 /* A2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A2ViewController.swift; sourceTree = "<group>"; };
-		E387430A2B6709C000479116 /* A3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A3ViewController.swift; sourceTree = "<group>"; };
-		E387430C2B6709CF00479116 /* B1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B1ViewController.swift; sourceTree = "<group>"; };
-		E387430E2B6709DE00479116 /* B2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2ViewController.swift; sourceTree = "<group>"; };
-		E38743102B6709F100479116 /* B3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B3ViewController.swift; sourceTree = "<group>"; };
-		E38743122B670A0300479116 /* C1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C1ViewController.swift; sourceTree = "<group>"; };
-		E38743142B670A0F00479116 /* C2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2ViewController.swift; sourceTree = "<group>"; };
-		E38743162B670A2500479116 /* C3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C3ViewController.swift; sourceTree = "<group>"; };
+		E38743062B67095E00479116 /* MiniBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBoardViewController.swift; sourceTree = "<group>"; };
 		E387431A2B670AEA00479116 /* CoreFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFunctions.swift; sourceTree = "<group>"; };
 		E387DED32B669C99001E3D07 /* MainBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBoardViewController.swift; sourceTree = "<group>"; };
 		E387DED72B669CD0001E3D07 /* MiniBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBoardView.swift; sourceTree = "<group>"; };
@@ -133,7 +117,6 @@
 				E387431D2B670BA300479116 /* ViewModels */,
 				E362A6092B592B9E001E3719 /* Views */,
 				E362A60A2B592BA5001E3719 /* Controllers */,
-				E38743192B670A3D00479116 /* MiniBoardControllers */,
 				E38821172B599A6700B1ED56 /* Pseudocode */,
 				E362A5E62B592B71001E3719 /* Info.plist */,
 			);
@@ -162,24 +145,9 @@
 			children = (
 				E3AE05982B640CC800DD5DF6 /* GameViewController.swift */,
 				E387DED32B669C99001E3D07 /* MainBoardViewController.swift */,
+				E38743062B67095E00479116 /* MiniBoardViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		E38743192B670A3D00479116 /* MiniBoardControllers */ = {
-			isa = PBXGroup;
-			children = (
-				E38743062B67095E00479116 /* A1ViewController.swift */,
-				E38743082B6709A600479116 /* A2ViewController.swift */,
-				E387430A2B6709C000479116 /* A3ViewController.swift */,
-				E387430C2B6709CF00479116 /* B1ViewController.swift */,
-				E387430E2B6709DE00479116 /* B2ViewController.swift */,
-				E38743102B6709F100479116 /* B3ViewController.swift */,
-				E38743122B670A0300479116 /* C1ViewController.swift */,
-				E38743142B670A0F00479116 /* C2ViewController.swift */,
-				E38743162B670A2500479116 /* C3ViewController.swift */,
-			);
-			path = MiniBoardControllers;
 			sourceTree = "<group>";
 		};
 		E387431C2B670B8900479116 /* Managers */ = {
@@ -353,25 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E38743132B670A0300479116 /* C1ViewController.swift in Sources */,
-				E387430B2B6709C000479116 /* A3ViewController.swift in Sources */,
 				E387DED42B669C99001E3D07 /* MainBoardViewController.swift in Sources */,
-				E387430F2B6709DE00479116 /* B2ViewController.swift in Sources */,
-				E38743112B6709F100479116 /* B3ViewController.swift in Sources */,
 				E387DED82B669CD0001E3D07 /* MiniBoardView.swift in Sources */,
-				E38743152B670A0F00479116 /* C2ViewController.swift in Sources */,
-				E38743092B6709A600479116 /* A2ViewController.swift in Sources */,
 				E362A5D92B592B6F001E3719 /* AppDelegate.swift in Sources */,
 				E362A5DB2B592B6F001E3719 /* SceneDelegate.swift in Sources */,
 				E3AE05992B640CC800DD5DF6 /* GameViewController.swift in Sources */,
 				E362A6262B593E44001E3719 /* Turn.swift in Sources */,
 				E38DF6A32B651539007008C5 /* DefaultLayouts.swift in Sources */,
 				E387431B2B670AEA00479116 /* CoreFunctions.swift in Sources */,
-				E38743072B67095E00479116 /* A1ViewController.swift in Sources */,
+				E38743072B67095E00479116 /* MiniBoardViewController.swift in Sources */,
 				E362A6282B59413E001E3719 /* Constants.swift in Sources */,
-				E38743172B670A2500479116 /* C3ViewController.swift in Sources */,
 				E366F5522B664F1B004EBC24 /* GameManager.swift in Sources */,
-				E387430D2B6709CF00479116 /* B1ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

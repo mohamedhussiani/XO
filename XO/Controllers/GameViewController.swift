@@ -259,7 +259,4 @@ class GameViewController: UIViewController {
             }
         }
     }
-
-    
 }
-
