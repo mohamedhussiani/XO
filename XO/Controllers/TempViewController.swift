@@ -88,7 +88,7 @@ var currentTurn = Turn.cross
 // Variable to switch the first player when game is reset
 var firstTurn = Turn.cross
 
-class GameViewController: UIViewController {
+class TempViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

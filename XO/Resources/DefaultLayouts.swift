@@ -51,6 +51,7 @@ struct DL {
         return label
     }
     
+    // Label to show current player's turn
     static func label2() -> UILabel {
         let label = UILabel()
         // Cross goes first
@@ -61,7 +62,7 @@ struct DL {
         return label
     }
     
-    // Image to show current player
+    // Image to show current player's turn
     static func image() ->  UIImageView {
         // Cross goes first
         let imageView = UIImageView(image: K.crossSymbol)

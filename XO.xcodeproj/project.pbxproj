@@ -19,10 +19,13 @@
 		E387431B2B670AEA00479116 /* CoreFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387431A2B670AEA00479116 /* CoreFunctions.swift */; };
 		E387DED42B669C99001E3D07 /* MainBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387DED32B669C99001E3D07 /* MainBoardViewController.swift */; };
 		E387DED82B669CD0001E3D07 /* MiniBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387DED72B669CD0001E3D07 /* MiniBoardView.swift */; };
-		E388211C2B599F9400B1ED56 /* SimpleXO.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E388211B2B599F9400B1ED56 /* SimpleXO.rtf */; };
+		E388211C2B599F9400B1ED56 /* MiniXO.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E388211B2B599F9400B1ED56 /* MiniXO.rtf */; };
 		E388211E2B599FE200B1ED56 /* MainXO.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E388211D2B599FE200B1ED56 /* MainXO.rtf */; };
+		E38902272B6A44CD00FFF4D5 /* RankXO.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E38902262B6A44CD00FFF4D5 /* RankXO.rtf */; };
+		E38902292B6A455A00FFF4D5 /* TutorialXO.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E38902282B6A455A00FFF4D5 /* TutorialXO.rtf */; };
+		E389022B2B6A45C600FFF4D5 /* CasualXO.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E389022A2B6A45C600FFF4D5 /* CasualXO.rtf */; };
 		E38DF6A32B651539007008C5 /* DefaultLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DF6A22B651539007008C5 /* DefaultLayouts.swift */; };
-		E3AE05992B640CC800DD5DF6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE05982B640CC800DD5DF6 /* GameViewController.swift */; };
+		E3AE05992B640CC800DD5DF6 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE05982B640CC800DD5DF6 /* TempViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +62,13 @@
 		E387431A2B670AEA00479116 /* CoreFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFunctions.swift; sourceTree = "<group>"; };
 		E387DED32B669C99001E3D07 /* MainBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBoardViewController.swift; sourceTree = "<group>"; };
 		E387DED72B669CD0001E3D07 /* MiniBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBoardView.swift; sourceTree = "<group>"; };
-		E388211B2B599F9400B1ED56 /* SimpleXO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = SimpleXO.rtf; sourceTree = "<group>"; };
+		E388211B2B599F9400B1ED56 /* MiniXO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = MiniXO.rtf; sourceTree = "<group>"; };
 		E388211D2B599FE200B1ED56 /* MainXO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = MainXO.rtf; sourceTree = "<group>"; };
+		E38902262B6A44CD00FFF4D5 /* RankXO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = RankXO.rtf; sourceTree = "<group>"; };
+		E38902282B6A455A00FFF4D5 /* TutorialXO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TutorialXO.rtf; sourceTree = "<group>"; };
+		E389022A2B6A45C600FFF4D5 /* CasualXO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = CasualXO.rtf; sourceTree = "<group>"; };
 		E38DF6A22B651539007008C5 /* DefaultLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLayouts.swift; sourceTree = "<group>"; };
-		E3AE05982B640CC800DD5DF6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E3AE05982B640CC800DD5DF6 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +149,7 @@
 		E362A60A2B592BA5001E3719 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E3AE05982B640CC800DD5DF6 /* GameViewController.swift */,
+				E3AE05982B640CC800DD5DF6 /* TempViewController.swift */,
 				E387DED32B669C99001E3D07 /* MainBoardViewController.swift */,
 				E38743062B67095E00479116 /* MiniBoardViewController.swift */,
 			);
@@ -168,8 +174,11 @@
 		E38821172B599A6700B1ED56 /* Pseudocode */ = {
 			isa = PBXGroup;
 			children = (
-				E388211B2B599F9400B1ED56 /* SimpleXO.rtf */,
+				E388211B2B599F9400B1ED56 /* MiniXO.rtf */,
 				E388211D2B599FE200B1ED56 /* MainXO.rtf */,
+				E38902262B6A44CD00FFF4D5 /* RankXO.rtf */,
+				E389022A2B6A45C600FFF4D5 /* CasualXO.rtf */,
+				E38902282B6A455A00FFF4D5 /* TutorialXO.rtf */,
 			);
 			path = Pseudocode;
 			sourceTree = "<group>";
@@ -293,10 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E388211E2B599FE200B1ED56 /* MainXO.rtf in Resources */,
+				E38902292B6A455A00FFF4D5 /* TutorialXO.rtf in Resources */,
 				E362A5E52B592B71001E3719 /* LaunchScreen.storyboard in Resources */,
 				E32890E82B666F9B00A33016 /* Template.xib in Resources */,
+				E38902272B6A44CD00FFF4D5 /* RankXO.rtf in Resources */,
 				E362A5E22B592B71001E3719 /* Assets.xcassets in Resources */,
-				E388211C2B599F9400B1ED56 /* SimpleXO.rtf in Resources */,
+				E389022B2B6A45C600FFF4D5 /* CasualXO.rtf in Resources */,
+				E388211C2B599F9400B1ED56 /* MiniXO.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +337,7 @@
 				E387DED82B669CD0001E3D07 /* MiniBoardView.swift in Sources */,
 				E362A5D92B592B6F001E3719 /* AppDelegate.swift in Sources */,
 				E362A5DB2B592B6F001E3719 /* SceneDelegate.swift in Sources */,
-				E3AE05992B640CC800DD5DF6 /* GameViewController.swift in Sources */,
+				E3AE05992B640CC800DD5DF6 /* TempViewController.swift in Sources */,
 				E362A6262B593E44001E3719 /* Turn.swift in Sources */,
 				E38DF6A32B651539007008C5 /* DefaultLayouts.swift in Sources */,
 				E387431B2B670AEA00479116 /* CoreFunctions.swift in Sources */,

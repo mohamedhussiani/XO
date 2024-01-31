@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+// Class or Struct
+class GameManager {
+    
+}

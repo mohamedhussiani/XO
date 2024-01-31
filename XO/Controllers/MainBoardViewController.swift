@@ -15,10 +15,10 @@ class MainBoardViewController: UIViewController {
         }
     }
     
-    let BoardView = DL.VStackView()
-    let RowOne = DL.HStackView()
-    let RowTwo = DL.HStackView()
-    let RowThree = DL.HStackView()
+    let boardView = DL.VStackView()
+    let rowOne = DL.HStackView()
+    let rowTwo = DL.HStackView()
+    let rowThree = DL.HStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,63 +27,46 @@ class MainBoardViewController: UIViewController {
 
 }
 
-
     private func setupMainBoardUI() {
         
+        // Main view background color
         view.backgroundColor = .white
         
         // Add VStack
-        view.addSubview(BoardView)
+        view.addSubview(boardView)
         
         // Constraints
-        BoardView.translatesAutoresizingMaskIntoConstraints = false
-        BoardView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor).isActive = true
-        BoardView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
-        BoardView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor, multiplier: 1).isActive = true
-        BoardView.heightAnchor.constraint(equalTo: BoardView.widthAnchor, multiplier: 1/1).isActive = true
+        boardView.translatesAutoresizingMaskIntoConstraints = false
+        boardView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor).isActive = true
+        boardView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
+        boardView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor, multiplier: 1).isActive = true
+        boardView.heightAnchor.constraint(equalTo: boardView.widthAnchor, multiplier: 1/1).isActive = true
         
         // Add Hstacks
-        BoardView.addArrangedSubview(RowOne)
-        BoardView.addArrangedSubview(RowTwo)
-        BoardView.addArrangedSubview(RowThree)
+        boardView.addArrangedSubview(rowOne)
+        boardView.addArrangedSubview(rowTwo)
+        boardView.addArrangedSubview(rowThree)
         
-        
-        // Modify spacing in main board
-        BoardView.spacing = 5
-        RowOne.spacing = 5
-        RowTwo.spacing = 5
-        RowThree.spacing = 5
-        
+        // Modify spacing of board view
+        boardView.spacing = K.spacing
         
         // Displays mini boards on main board
-        RowOne.addArrangedSubview(board[0][0].view)
-        RowOne.addArrangedSubview(board[0][1].view)
-        RowOne.addArrangedSubview(board[0][2].view)
-        
-        RowTwo.addArrangedSubview(board[1][0].view)
-        RowTwo.addArrangedSubview(board[1][1].view)
-        RowTwo.addArrangedSubview(board[1][2].view)
-        
-        RowThree.addArrangedSubview(board[2][0].view)
-        RowThree.addArrangedSubview(board[2][1].view)
-        RowThree.addArrangedSubview(board[2][2].view)
+        let stacksInBoard = boardView.arrangedSubviews as! [UIStackView]
+        var onRow = 0
+        stacksInBoard.forEach { stack in
+            for cell in 0..<K.maxGridColumn{
+                stack.addArrangedSubview(board[onRow][cell].view)
+            }
+            // Modify stack spacing
+            stack.spacing = K.spacing
+            onRow += 1
+        }
         
         // Creates padding around each board cell
-        RowOne.arrangedSubviews.forEach { board in
-            board.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        boardView.arrangedSubviews.forEach { row in
+            row.subviews.forEach { board in
+                board.directionalLayoutMargins = NSDirectionalEdgeInsets(top: K.padding, leading: K.padding, bottom: K.padding, trailing: K.padding)
+            }
         }
-        RowTwo.arrangedSubviews.forEach { board in
-            board.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        }
-        RowThree.arrangedSubviews.forEach { board in
-            board.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        }
-        
     }
-
 }
-
-//        BoardView.arrangedSubviews.forEach { row in
-//            row.translatesAutoresizingMaskIntoConstraints = false
-//            row.heightAnchor.constraint(equalTo: row.heightAnchor, multiplier: 1/1).isActive = true
-//        }

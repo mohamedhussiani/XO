@@ -21,10 +21,10 @@ class MiniBoardViewController: UIViewController {
     // Input: [[a, a, a], [a, a, a], [a, a, a]]
     // Ouput: [[a1, a2, a3], [b1, b2, b3], [c1, c2, c3]]
     
-    let BoardView = DL.VStackView()
-    let RowOne = DL.HStackView()
-    let RowTwo = DL.HStackView()
-    let RowThree = DL.HStackView()
+    let boardView = DL.VStackView()
+    let rowOne = DL.HStackView()
+    let rowTwo = DL.HStackView()
+    let rowThree = DL.HStackView()
     
 
     // !!!The current player's turn - Temp Feature In this Class!!!
@@ -50,39 +50,39 @@ class MiniBoardViewController: UIViewController {
         view.backgroundColor = .white
         
         // Add VStack
-        view.addSubview(BoardView)
+        view.addSubview(boardView)
         
         // Constraints
-        BoardView.translatesAutoresizingMaskIntoConstraints = false
-        BoardView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor).isActive = true
-        BoardView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
-        BoardView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor, multiplier: 1).isActive = true
-        BoardView.heightAnchor.constraint(equalTo: BoardView.widthAnchor, multiplier: 1/1).isActive = true
+        boardView.translatesAutoresizingMaskIntoConstraints = false
+        boardView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor).isActive = true
+        boardView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
+        boardView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor, multiplier: 1).isActive = true
+        boardView.heightAnchor.constraint(equalTo: boardView.widthAnchor, multiplier: 1/1).isActive = true
         
         // Add Hstacks
-        BoardView.addArrangedSubview(RowOne)
-        BoardView.addArrangedSubview(RowTwo)
-        BoardView.addArrangedSubview(RowThree)
+        boardView.addArrangedSubview(rowOne)
+        boardView.addArrangedSubview(rowTwo)
+        boardView.addArrangedSubview(rowThree)
         
         // Constraints
-        for row in BoardView.arrangedSubviews {
+        for row in boardView.arrangedSubviews {
             row.translatesAutoresizingMaskIntoConstraints = false
             row.heightAnchor.constraint(equalTo: row.heightAnchor, multiplier: 1/1).isActive = true
         }
         
-        RowOne.addArrangedSubview(board[0][0])
-        RowOne.addArrangedSubview(board[0][1])
-        RowOne.addArrangedSubview(board[0][2])
-        
-        RowTwo.addArrangedSubview(board[1][0])
-        RowTwo.addArrangedSubview(board[1][1])
-        RowTwo.addArrangedSubview(board[1][2])
-        
-        RowThree.addArrangedSubview(board[2][0])
-        RowThree.addArrangedSubview(board[2][1])
-        RowThree.addArrangedSubview(board[2][2])
+        // Add each playable cell (button) to mini board
+        let stacksInBoard = boardView.arrangedSubviews as! [UIStackView]
+        var onRow = 0
+        stacksInBoard.forEach { stack in
+            for cell in 0..<K.maxGridColumn {
+                stack.addArrangedSubview(board[onRow][cell])
+            }
+            onRow += 1
+        }
+  
     }
     
+    // Action method for the cell in miniboard
     @objc func updateCell(for cell: UIButton) {
         if cell.currentImage == nil {
             if let validSymbol = CF.playerSymbol(currentTurn){

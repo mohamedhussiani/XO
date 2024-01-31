@@ -31,7 +31,6 @@ struct CF {
     }
     
     
-    
     // Resets the board if cells are full
     static func resetBoard(for board: [[UIButton]]) {
         for row in board {
