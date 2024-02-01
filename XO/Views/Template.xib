@@ -741,6 +741,20 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFS-sF-LGx">
+                    <rect key="frame" x="46.666666666666657" y="378" width="300" height="60"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Gi6-6v-XwP"/>
+                        <constraint firstAttribute="width" secondItem="OFS-sF-LGx" secondAttribute="height" multiplier="5:1" id="Zwe-Ye-aR5"/>
+                    </constraints>
+                    <color key="tintColor" name="AccentColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Default">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgV-ps-xTk">
                     <rect key="frame" x="46.666666666666657" y="458" width="300" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -802,6 +816,8 @@
                 <constraint firstItem="jxX-yv-Osn" firstAttribute="bottom" secondItem="WgV-ps-xTk" secondAttribute="bottom" constant="300" id="hzU-In-XDt"/>
                 <constraint firstItem="o8T-UH-VaN" firstAttribute="centerX" secondItem="x8h-FJ-giM" secondAttribute="centerX" id="mQ7-jv-MIw"/>
                 <constraint firstItem="WgV-ps-xTk" firstAttribute="centerX" secondItem="x8h-FJ-giM" secondAttribute="centerX" id="sme-sj-ETf"/>
+                <constraint firstItem="jxX-yv-Osn" firstAttribute="bottom" secondItem="OFS-sF-LGx" secondAttribute="bottom" constant="380" id="uIY-Pj-gAx"/>
+                <constraint firstItem="OFS-sF-LGx" firstAttribute="centerX" secondItem="x8h-FJ-giM" secondAttribute="centerX" id="w6n-ks-br7"/>
                 <constraint firstItem="39e-Yb-iaj" firstAttribute="top" secondItem="jxX-yv-Osn" secondAttribute="top" constant="75" id="wFc-ge-8Jq"/>
             </constraints>
             <point key="canvasLocation" x="65" y="-250"/>

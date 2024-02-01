@@ -24,6 +24,17 @@ struct CF {
             cell.setPreferredSymbolConfiguration(K.config, forImageIn: .normal)
         }
     }
+    
+    // Placeholder: To show player's turn
+    static func updateTurnLabel(for label: UILabel, to turn: Turn) -> UILabel {
+        if turn == Turn.cross {
+            label.text = K.cross
+        }
+        if turn == Turn.nought {
+            label.text = K.nought
+        }
+        return label
+    }
 
     // Returns true if button image in cell matches the symbol
     static func verifyCell(for cell: UIButton, with symbol: UIImage) -> Bool {

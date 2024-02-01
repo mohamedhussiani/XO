@@ -7,14 +7,17 @@
 
 import UIKit
 
-class MiniBoardViewController: UIViewController {
+class MiniBoardViewController: UIViewController, Identifiable {
     
-    // Create an instance for the mini board
-    let board: [[UIButton]] = K.grid3by3.map { row in
+    // Create an instance for the cells in the mini board
+    let cells = K.grid3by3.map { row in
         row.map { cell in
             DL.button()
         }
     }
+    
+    // Create a unique identifier 
+    let id = UUID()
     
     // Replace identical buttons with unique button instances
     // For type UIButton()
@@ -26,23 +29,20 @@ class MiniBoardViewController: UIViewController {
     let rowTwo = DL.HStackView()
     let rowThree = DL.HStackView()
     
-
-    // !!!The current player's turn - Temp Feature In this Class!!!
-    var currentTurn = Turn.cross
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupMiniBoardUI()
         
-        for row in board {
+        for row in cells {
             for cell in row {
                 cell.addTarget(self, action: #selector(updateCell), for: .touchUpInside)
             }
         }
-
+        
     }
     
+
     
     // MiniBoard Setup
     private func setupMiniBoardUI() {
@@ -75,7 +75,7 @@ class MiniBoardViewController: UIViewController {
         var onRow = 0
         stacksInBoard.forEach { stack in
             for cell in 0..<K.maxGridColumn {
-                stack.addArrangedSubview(board[onRow][cell])
+                stack.addArrangedSubview(cells[onRow][cell])
             }
             onRow += 1
         }
@@ -83,19 +83,22 @@ class MiniBoardViewController: UIViewController {
     }
     
     // Action method for the cell in miniboard
-    @objc func updateCell(for cell: UIButton) {
+    @objc func updateCell(for cell: UIButton){
         if cell.currentImage == nil {
             if let validSymbol = CF.playerSymbol(currentTurn){
                 if CF.checkPlayerIsCross(for: currentTurn){
                     CF.addMove(to: cell, for: currentTurn, their: validSymbol)
                     currentTurn = Turn.nought
+                    print(self.id)
                 } else if CF.checkPlayerIsNought(for: currentTurn){
                     CF.addMove(to: cell, for: currentTurn, their: validSymbol)
-                    currentTurn = .cross
+                    currentTurn = Turn.cross
+                    print(self.id)
                 }
             }
         }
     }
+    
 }
     
 

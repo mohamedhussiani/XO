@@ -7,13 +7,20 @@
 
 import UIKit
 
-class MainBoardViewController: UIViewController {
+class MainBoardViewController: UIViewController, Identifiable {
     
-    let board: [[UIViewController]] = K.grid3by3.map { row in
+    // IMPORTANT: Sets the inital current turn of player -- TEMP HERE (maybe?)
+    var currentTurn = Turn.cross
+    
+    // Create 3 by 3 matrix of a mini board instance of type class
+    let boards = K.grid3by3.map { row in
         row.map { cell in
             MiniBoardViewController()
         }
     }
+    
+    // Create a unique identifier
+    let id = UUID()
     
     let boardView = DL.VStackView()
     let rowOne = DL.HStackView()
@@ -22,11 +29,13 @@ class MainBoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupMainBoardUI()
-
-}
-
+        
+        print(MiniBoardIDs())
+        
+    }
+    
     private func setupMainBoardUI() {
         
         // Main view background color
@@ -55,7 +64,7 @@ class MainBoardViewController: UIViewController {
         var onRow = 0
         stacksInBoard.forEach { stack in
             for cell in 0..<K.maxGridColumn{
-                stack.addArrangedSubview(board[onRow][cell].view)
+                stack.addArrangedSubview(boards[onRow][cell].view)
             }
             // Modify stack spacing
             stack.spacing = K.spacing
@@ -69,4 +78,17 @@ class MainBoardViewController: UIViewController {
             }
         }
     }
+    
+    // Returns an array of the ids of the mini boards
+    func MiniBoardIDs() -> [UUID] {
+        var IDs = [UUID]()
+        boards.forEach { row in
+            row.forEach { miniBoard in
+                let ID = miniBoard.id
+                IDs.append(ID)
+            }
+        }
+        return IDs
+    }
+    
 }

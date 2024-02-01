@@ -8,6 +8,6 @@
 import Foundation
 
 // Class or Struct
-class GameManager {
+class GameManager: NSObject {
     
 }
