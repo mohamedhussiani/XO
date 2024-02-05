@@ -7,3 +7,6 @@
 
 import Foundation
 
+protocol TurnTracker {
+    var currentTurn: Turn { get }
+}

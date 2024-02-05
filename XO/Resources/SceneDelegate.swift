@@ -20,24 +20,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
  
         // Add any UIKit View Controller as the first screen -- make sure scene is defined
-//        let window = UIWindow(windowScene: scene)
-//        let viewController = CasualPlayViewController()
-//        window.rootViewController = viewController
-//        self.window = window
-//        window.makeKeyAndVisible()
+        let window = UIWindow(windowScene: scene)
+        let viewController = MainBoardViewController()
+        window.rootViewController = viewController
+        self.window = window
+        window.makeKeyAndVisible()
         
         
         // Add any SwiftUI as first screen
-        let window = UIWindow(windowScene: scene)
-        let contentView = CasualPlayUI()
-        
-        // Use UIHostingController to wrap your SwiftUI view
-        let hostingController = UIHostingController(rootView: contentView)
-        
-        // Set the hosting controller as the root view controller
-        window.rootViewController = hostingController
-        self.window = window
-        window.makeKeyAndVisible()
+//        let window = UIWindow(windowScene: scene)
+//        let contentView = GamePlayUI()
+//
+//        // Use UIHostingController to wrap your SwiftUI view
+//        let hostingController = UIHostingController(rootView: contentView)
+//
+//        // Set the hosting controller as the root view controller
+//        window.rootViewController = hostingController
+//        self.window = window
+//        window.makeKeyAndVisible()
         
     }
 

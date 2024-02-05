@@ -8,6 +8,10 @@
 import Foundation
 
 // Class or Struct
-class GameManager: NSObject {
+class GameManager: ObservableObject {
+    
+    @Published var gameBoard = MainBoardViewController()
+    
+    
     
 }

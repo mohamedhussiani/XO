@@ -14,7 +14,7 @@ import SwiftUI
 struct XO: App {
     var body: some Scene {
         WindowGroup {
-            CasualPlayUI()
+            GamePlayUI()
         }
     }
 }

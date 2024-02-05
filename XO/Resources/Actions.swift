@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct DL {
+struct A {
     
     // Board Columns
     static func VStackView() -> UIStackView {
